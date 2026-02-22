@@ -1,27 +1,1051 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Welcome to Abraham Olasode Page</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet"  href="Main.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	</head> 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abraham Olasode — ICT Service Administrator</title>
+  <meta name="description" content="Abraham Olasode — ICT Service Administrator. IT Admin passionate about endpoint management, Microsoft 365, and cloud security."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,700;1,300;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0B1F3A;
+      --navy-mid: #152D50;
+      --navy-light: #1E4080;
+      --blue: #2563EB;
+      --blue-light: #3B82F6;
+      --accent: #0EA5E9;
+      --accent-gold: #F59E0B;
+      --white: #FFFFFF;
+      --off-white: #F8FAFF;
+      --gray-100: #F1F5FE;
+      --gray-200: #E2E8F0;
+      --gray-400: #94A3B8;
+      --gray-600: #475569;
+      --gray-800: #1E293B;
+      --text: #0F172A;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%;
+      height: 68px;
+      background: rgba(11, 31, 58, 0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .nav-logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.01em;
+    }
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      background: var(--navy);
+      display: flex; align-items: center;
+      padding: 120px 5% 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(37,99,235,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37,99,235,0.07) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37,99,235,0.18) 0%, transparent 70%);
+      top: -100px; right: -100px;
+      pointer-events: none;
+    }
+
+    .hero-glow-2 {
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(14,165,233,0.12) 0%, transparent 70%);
+      bottom: 50px; left: 5%;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 800px;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: rgba(37,99,235,0.15);
+      border: 1px solid rgba(37,99,235,0.3);
+      border-radius: 100px;
+      padding: 0.35rem 1rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2rem;
+      animation: fadeUp 0.6s ease both;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.7); }
+    }
+
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-bio {
+      font-size: 1.15rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.65);
+      max-width: 560px;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    .hero-title-pill {
+      display: inline-block;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 6px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 2rem;
+      font-weight: 500;
+      animation: fadeUp 0.6s 0.15s ease both;
+    }
+
+    .hero-actions {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.85rem 1.8rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      box-shadow: 0 4px 24px rgba(37,99,235,0.35);
+    }
+    .btn-primary:hover {
+      background: var(--blue-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(37,99,235,0.45);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+    .btn-outline:hover {
+      border-color: rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.06);
+      transform: translateY(-2px);
+    }
+
+    .hero-stats {
+      position: absolute; bottom: 60px; right: 5%;
+      display: flex; gap: 2.5rem;
+      animation: fadeUp 0.6s 0.4s ease both;
+      z-index: 2;
+    }
+
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: 'Fraunces', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-top: 0.3rem;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── SECTIONS ─── */
+    section { padding: 100px 5%; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .section-title em { font-style: italic; color: var(--blue); }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--gray-600);
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 3.5rem;
+      font-weight: 300;
+    }
+
+    /* ─── ABOUT ─── */
+    #about { background: var(--off-white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--gray-600);
+      margin-bottom: 1.25rem;
+      font-weight: 300;
+    }
+
+    .about-text p strong { color: var(--navy); font-weight: 600; }
+
+    .about-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 40px rgba(11,31,58,0.07);
+    }
+
+    .about-card-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      color: var(--navy);
+      margin-bottom: 1.25rem;
+      font-weight: 600;
+    }
+
+    .role-tag {
+      display: inline-block;
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      border-radius: 6px;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--navy-light);
+      margin: 0.25rem;
+    }
+
+    .open-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(37,99,235,0.08);
+      border: 1px solid rgba(37,99,235,0.2);
+      border-radius: 8px;
+      padding: 0.6rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--blue);
+      margin-top: 1.25rem;
+    }
+    .open-badge::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #22C55E;
+    }
+
+    /* ─── CERTIFICATIONS ─── */
+    #certifications { background: var(--white); }
+
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .cert-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex; align-items: flex-start; gap: 1rem;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .cert-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      border-radius: 3px 0 0 3px;
+    }
+    .cert-card.active::before { background: var(--blue); }
+    .cert-card.expired::before { background: var(--gray-400); }
+
+    .cert-card:hover {
+      border-color: var(--blue-light);
+      box-shadow: 0 8px 32px rgba(37,99,235,0.1);
+      transform: translateY(-2px);
+    }
+
+    .cert-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .cert-card.active .cert-icon { background: rgba(37,99,235,0.1); }
+    .cert-card.expired .cert-icon { background: var(--gray-100); }
+
+    .cert-name {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 0.3rem;
+    }
+    .cert-issuer {
+      font-size: 0.78rem;
+      color: var(--gray-400);
+      font-weight: 400;
+    }
+    .cert-status {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.5rem;
+      border-radius: 100px;
+      margin-top: 0.4rem;
+    }
+    .status-active { background: rgba(34,197,94,0.1); color: #16A34A; }
+    .status-expired { background: var(--gray-100); color: var(--gray-400); }
+
+    /* ─── SKILLS ─── */
+    .skills-bar-section {
+      margin-top: 4rem;
+      padding-top: 4rem;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-pill {
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--navy);
+      display: flex; align-items: center; gap: 0.6rem;
+      transition: all 0.2s;
+    }
+    .skill-pill:hover {
+      background: rgba(37,99,235,0.06);
+      border-color: rgba(37,99,235,0.3);
+      color: var(--blue);
+    }
+    .skill-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--blue);
+      flex-shrink: 0;
+    }
+
+    /* ─── LABS ─── */
+    #labs { background: var(--navy); }
+    #labs .section-label { color: var(--accent); }
+    #labs .section-title { color: var(--white); }
+    #labs .section-subtitle { color: rgba(255,255,255,0.5); }
+
+    .labs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .lab-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 1.75rem;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .lab-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue), var(--accent));
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+    .lab-card:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(37,99,235,0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+    .lab-card:hover::after { opacity: 1; }
+
+    .lab-number {
+      font-family: 'Fraunces', serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .lab-title {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--white);
+      margin-bottom: 0.6rem;
+      line-height: 1.35;
+    }
+
+    .lab-desc {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.7;
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+
+    .lab-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .lab-tag {
+      font-size: 0.7rem;
+      font-weight: 500;
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+      background: rgba(37,99,235,0.15);
+      color: var(--accent);
+      border: 1px solid rgba(37,99,235,0.25);
+    }
+
+    /* ─── CONTACT ─── */
+    #contact { background: var(--off-white); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+
+    .contact-link {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.25s;
+      color: var(--navy);
+    }
+    .contact-link:hover {
+      border-color: var(--blue-light);
+      box-shadow: 0 4px 24px rgba(37,99,235,0.12);
+      transform: translateX(4px);
+    }
+
+    .contact-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .contact-link-text strong {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.1rem;
+    }
+    .contact-link-text span {
+      font-size: 0.78rem;
+      color: var(--gray-400);
+    }
+
+    .contact-cta {
+      background: var(--navy);
+      border-radius: 16px;
+      padding: 2.5rem;
+      color: var(--white);
+    }
+    .contact-cta h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+    .contact-cta h3 em { font-style: italic; color: var(--accent); }
+    .contact-cta p {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+      margin-bottom: 1.75rem;
+      font-weight: 300;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--navy);
+      padding: 2.5rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+    }
+    .footer-copy {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-stats { position: static; margin-top: 3rem; justify-content: flex-start; }
+      .hero { padding-bottom: 60px; }
+      section { padding: 70px 5%; }
+    }
+  </style>
+</head>
 <body>
-<div class="box">
-	<img src="ab1.jpg" alt="" class="box-img" text >
-	<h1>Abraham Olasode</h1>
-	<h5>Network Administrator - Front-End Enthusiast</h5>
-	<p> Abraham Olasode (Abraolas) is a Graduate Member of Computer Professional Registration Council of Nigeria, with skills in Networking and IT support</p> 
-	<p>I am obsessed with creating Beautiful and Dynamic Websites and i am also a UI enthusiast</p>
-<ul>
-	
-<li <a href="https://www.facebook.com/olasode.abraham"><i class="fa fa-facebook-square"></i></a></li>
-<li <a href="https://twitter.com/abraolas"><i class="fa fa-twitter-square"></i></a></li>
-<li <a href="#"><i class="fa fa-google-plus-square"></i></a></li> 
 
-</ul>
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Abraham <span>Olasode</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#certifications">Credentials</a></li>
+    <li><a href="#labs">Lab Work</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
 
-</div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Available for new opportunities</div>
+    <div class="hero-title-pill">ICT Service Administrator</div>
+    <h1>Abraham<br/><em>Olasode.</em></h1>
+    <p class="hero-bio">IT Admin passionate about endpoint management, Microsoft 365, and cloud security. Building practical skills in Microsoft Intune, Azure, and enterprise device management.</p>
+    <div class="hero-actions">
+      <a href="#labs" class="btn btn-primary">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+        View My Lab Work
+      </a>
+      <a href="#contact" class="btn btn-outline">
+        Get In Touch
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">8+</div>
+      <div class="stat-label">Certifications</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">10</div>
+      <div class="stat-label">Intune Labs</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">M365</div>
+      <div class="stat-label">Specialist</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <div class="section-label">About Me</div>
+        <h2 class="section-title">Endpoint management,<br/><em>done right.</em></h2>
+        <p>I am <strong>Abraham Olasode</strong>, an ICT Service Administrator with hands-on experience across Windows endpoint management, Microsoft 365 administration, network infrastructure, and cloud platforms.</p>
+        <p>My work sits at the intersection of <strong>operations and security</strong> — keeping devices compliant, users productive, and systems resilient. I am currently deepening my expertise in <strong>Microsoft Intune</strong> and pursuing the MD-102 Endpoint Administrator certification.</p>
+        <p>I bring a multi-disciplinary background spanning networking (CCNA), cloud platforms (AWS, Azure), security (CompTIA Security+), and IT service management (ITIL 4) — giving me a well-rounded view of enterprise IT.</p>
+      </div>
+
+      <div class="reveal">
+        <div class="about-card">
+          <div class="about-card-title">Open to Roles</div>
+          <div>
+            <span class="role-tag">IT Administrator</span>
+            <span class="role-tag">Endpoint Administrator</span>
+            <span class="role-tag">Systems Administrator</span>
+            <span class="role-tag">Cloud Support Engineer</span>
+            <span class="role-tag">Microsoft 365 Admin</span>
+            <span class="role-tag">IT Security Analyst</span>
+          </div>
+          <div class="open-badge">Open to opportunities</div>
+        </div>
+
+        <div class="about-card" style="margin-top:1.25rem">
+          <div class="about-card-title">Core Focus Areas</div>
+          <div style="display:flex;flex-direction:column;gap:0.6rem">
+            <div style="display:flex;align-items:center;gap:0.75rem">
+              <div style="width:32px;height:32px;background:rgba(37,99,235,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center">🖥️</div>
+              <span style="font-size:0.88rem;font-weight:500;color:var(--navy)">Microsoft Intune & Endpoint Management</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.75rem">
+              <div style="width:32px;height:32px;background:rgba(37,99,235,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center">☁️</div>
+              <span style="font-size:0.88rem;font-weight:500;color:var(--navy)">Microsoft 365 & Azure Administration</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.75rem">
+              <div style="width:32px;height:32px;background:rgba(37,99,235,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center">🔒</div>
+              <span style="font-size:0.88rem;font-weight:500;color:var(--navy)">Cloud Security & Compliance</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.75rem">
+              <div style="width:32px;height:32px;background:rgba(37,99,235,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center">🌐</div>
+              <span style="font-size:0.88rem;font-weight:500;color:var(--navy)">Network Infrastructure & Fortinet</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Credentials</div>
+      <h2 class="section-title">Certifications &amp; <em>Training</em></h2>
+      <p class="section-subtitle">A multi-cloud, multi-vendor certification portfolio built across security, networking, cloud, and IT service management.</p>
+    </div>
+
+    <div class="certs-grid reveal">
+
+      <div class="cert-card active">
+        <div class="cert-icon">🛡️</div>
+        <div>
+          <div class="cert-name">CompTIA Security+</div>
+          <div class="cert-issuer">CompTIA</div>
+          <span class="cert-status status-active">Active</span>
+        </div>
+      </div>
+
+      <div class="cert-card active">
+        <div class="cert-icon">⚙️</div>
+        <div>
+          <div class="cert-name">ITIL 4 Foundation</div>
+          <div class="cert-issuer">Axelos / PeopleCert</div>
+          <span class="cert-status status-active">Active</span>
+        </div>
+      </div>
+
+      <div class="cert-card active">
+        <div class="cert-icon">🔥</div>
+        <div>
+          <div class="cert-name">Fortinet FortiGate 7.6 Operator</div>
+          <div class="cert-issuer">Fortinet</div>
+          <span class="cert-status status-active">Active</span>
+        </div>
+      </div>
+
+      <div class="cert-card active">
+        <div class="cert-icon">🔷</div>
+        <div>
+          <div class="cert-name">Microsoft Certified: Azure Fundamentals</div>
+          <div class="cert-issuer">Microsoft — AZ-900</div>
+          <span class="cert-status status-active">Active</span>
+        </div>
+      </div>
+
+      <div class="cert-card active">
+        <div class="cert-icon">📈</div>
+        <div>
+          <div class="cert-name">McKinsey Forward Program</div>
+          <div class="cert-issuer">McKinsey &amp; Company</div>
+          <span class="cert-status status-active">Active</span>
+        </div>
+      </div>
+
+      <div class="cert-card expired">
+        <div class="cert-icon" style="filter:grayscale(1)">🌐</div>
+        <div>
+          <div class="cert-name">CCNA — Cisco Certified Network Associate</div>
+          <div class="cert-issuer">Cisco</div>
+          <span class="cert-status status-expired">Expired — In Progress</span>
+        </div>
+      </div>
+
+      <div class="cert-card expired">
+        <div class="cert-icon" style="filter:grayscale(1)">☁️</div>
+        <div>
+          <div class="cert-name">AWS Certified Cloud Practitioner</div>
+          <div class="cert-issuer">Amazon Web Services</div>
+          <span class="cert-status status-expired">Expired</span>
+        </div>
+      </div>
+
+      <div class="cert-card expired">
+        <div class="cert-icon" style="filter:grayscale(1)">🔷</div>
+        <div>
+          <div class="cert-name">Microsoft Certified: Azure Administrator Associate</div>
+          <div class="cert-issuer">Microsoft — AZ-104</div>
+          <span class="cert-status status-expired">Expired</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Skills -->
+    <div class="skills-bar-section reveal">
+      <div class="section-label" style="margin-bottom:1.5rem">Technical Skills</div>
+      <div class="skills-grid">
+        <div class="skill-pill"><span class="skill-dot"></span>Microsoft Intune</div>
+        <div class="skill-pill"><span class="skill-dot"></span>Microsoft 365 Administration</div>
+        <div class="skill-pill"><span class="skill-dot"></span>Azure Active Directory / Entra ID</div>
+        <div class="skill-pill"><span class="skill-dot"></span>Windows 10 / 11 Management</div>
+        <div class="skill-pill"><span class="skill-dot"></span>iOS & Android MDM</div>
+        <div class="skill-pill"><span class="skill-dot"></span>Conditional Access Policies</div>
+        <div class="skill-pill"><span class="skill-dot"></span>Windows Autopilot</div>
+        <div class="skill-pill"><span class="skill-dot"></span>Fortinet FortiGate Firewall</div>
+        <div class="skill-pill"><span class="skill-dot"></span>Azure Virtual Machines</div>
+        <div class="skill-pill"><span class="skill-dot"></span>CompTIA Security+ (Cybersecurity)</div>
+        <div class="skill-pill"><span class="skill-dot"></span>ITIL 4 Service Management</div>
+        <div class="skill-pill"><span class="skill-dot"></span>Network Infrastructure (LAN/WAN)</div>
+        <div class="skill-pill"><span class="skill-dot"></span>PowerShell Scripting</div>
+        <div class="skill-pill"><span class="skill-dot"></span>VirtualBox / Hyper-V</div>
+        <div class="skill-pill"><span class="skill-dot"></span>Active Directory & Group Policy</div>
+        <div class="skill-pill"><span class="skill-dot"></span>Helpdesk & IT Support</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LABS -->
+<section id="labs">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Hands-On Work</div>
+      <h2 class="section-title" style="color:var(--white)">Microsoft Intune <em style="color:var(--accent)">Lab Projects</em></h2>
+      <p class="section-subtitle">10 end-to-end labs built as part of my MD-102 Endpoint Administrator certification journey. Each lab reflects real enterprise scenarios across Windows, iOS, and Android device management.</p>
+    </div>
+
+    <div class="labs-grid reveal">
+
+      <div class="lab-card">
+        <div class="lab-number">Lab 01</div>
+        <div class="lab-title">Tenant Setup & Intune Activation</div>
+        <div class="lab-desc">Configured M365 developer tenant, activated Intune, created test users and device groups, and explored the full Intune Admin Centre.</div>
+        <div class="lab-tags">
+          <span class="lab-tag">Intune</span>
+          <span class="lab-tag">M365</span>
+          <span class="lab-tag">Entra ID</span>
+        </div>
+      </div>
+
+      <div class="lab-card">
+        <div class="lab-number">Lab 02</div>
+        <div class="lab-title">Windows 11 Device Enrollment (Azure AD Join)</div>
+        <div class="lab-desc">Enrolled a Windows 11 VM via Azure AD Join, verified enrollment in Intune portal, and explored remote device management actions.</div>
+        <div class="lab-tags">
+          <span class="lab-tag">Windows 11</span>
+          <span class="lab-tag">Azure AD Join</span>
+          <span class="lab-tag">MDM Enrollment</span>
+        </div>
+      </div>
+
+      <div class="lab-card">
+        <div class="lab-number">Lab 03</div>
+        <div class="lab-title">Android Device Enrollment (Work Profile & Corporate)</div>
+        <div class="lab-desc">Enrolled Android device using Intune Company Portal, configured Android Enterprise Work Profile for BYOD, and explored Managed Google Play integration.</div>
+        <div class="lab-tags">
+          <span class="lab-tag">Android Enterprise</span>
+          <span class="lab-tag">BYOD</span>
+          <span class="lab-tag">Managed Google Play</span>
+        </div>
+      </div>
+
+      <div class="lab-card">
+        <div class="lab-number">Lab 04</div>
+        <div class="lab-title">iOS/iPadOS Device Enrollment</div>
+        <div class="lab-desc">Set up Apple MDM Push Certificate, enrolled iPhone via Company Portal, and explored supervised vs unsupervised iOS management modes.</div>
+        <div class="lab-tags">
+          <span class="lab-tag">iOS/iPadOS</span>
+          <span class="lab-tag">Apple MDM</span>
+          <span class="lab-tag">Company Portal</span>
+        </div>
+      </div>
+
+      <div class="lab-card">
+        <div class="lab-number">Lab 05</div>
+        <div class="lab-title">Configuration Profiles — Windows & iOS</div>
+        <div class="lab-desc">Built and deployed Configuration Profiles using Settings Catalog for Windows (USB restrictions, screensaver) and Device Restriction profiles for iOS (camera, AirDrop).</div>
+        <div class="lab-tags">
+          <span class="lab-tag">Settings Catalog</span>
+          <span class="lab-tag">Device Config</span>
+          <span class="lab-tag">Policy Assignment</span>
+        </div>
+      </div>
+
+      <div class="lab-card">
+        <div class="lab-number">Lab 06</div>
+        <div class="lab-title">Compliance Policies & Conditional Access</div>
+        <div class="lab-desc">Created compliance policies requiring BitLocker and PIN enforcement, then linked them to Azure AD Conditional Access to block non-compliant devices from Microsoft 365.</div>
+        <div class="lab-tags">
+          <span class="lab-tag">Compliance</span>
+          <span class="lab-tag">Conditional Access</span>
+          <span class="lab-tag">Zero Trust</span>
+        </div>
+      </div>
+
+      <div class="lab-card">
+        <div class="lab-number">Lab 07</div>
+        <div class="lab-title">App Deployment — Win32, iOS & Android</div>
+        <div class="lab-desc">Packaged a Win32 app using IntuneWinAppUtil, deployed to Windows. Deployed managed App Store app to iOS and Managed Google Play app to Android devices.</div>
+        <div class="lab-tags">
+          <span class="lab-tag">Win32 App</span>
+          <span class="lab-tag">IntuneWinAppUtil</span>
+          <span class="lab-tag">App Management</span>
+        </div>
+      </div>
+
+      <div class="lab-card">
+        <div class="lab-number">Lab 08</div>
+        <div class="lab-title">Windows Autopilot Deployment</div>
+        <div class="lab-desc">Extracted hardware hash, registered device with Autopilot, configured user-driven deployment profile, and simulated zero-touch Windows provisioning end-to-end.</div>
+        <div class="lab-tags">
+          <span class="lab-tag">Autopilot</span>
+          <span class="lab-tag">Zero-Touch</span>
+          <span class="lab-tag">OOBE</span>
+        </div>
+      </div>
+
+      <div class="lab-card">
+        <div class="lab-number">Lab 09</div>
+        <div class="lab-title">Security Baselines & Endpoint Security</div>
+        <div class="lab-desc">Applied Microsoft Security Baseline to Windows device, configured Defender Antivirus, Firewall, and BitLocker policies, and reviewed compliance status reports.</div>
+        <div class="lab-tags">
+          <span class="lab-tag">Security Baseline</span>
+          <span class="lab-tag">Defender</span>
+          <span class="lab-tag">BitLocker</span>
+        </div>
+      </div>
+
+      <div class="lab-card">
+        <div class="lab-number">Lab 10</div>
+        <div class="lab-title">RBAC, Scope Tags & Intune Monitoring</div>
+        <div class="lab-desc">Created custom RBAC role with limited permissions, configured Scope Tags to separate device groups by location, and explored audit logs and compliance reports.</div>
+        <div class="lab-tags">
+          <span class="lab-tag">RBAC</span>
+          <span class="lab-tag">Scope Tags</span>
+          <span class="lab-tag">Audit Logs</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:3rem" class="reveal">
+      <a href="https://github.com/abraolas/OlasodeAbraham" target="_blank" rel="noopener" class="btn btn-primary">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="section-label">Get In Touch</div>
+        <h2 class="section-title">Let's <em>connect.</em></h2>
+        <p class="section-subtitle" style="margin-bottom:2rem">Open to ICT Administrator, Endpoint Management, and cloud-adjacent roles. Feel free to reach out via LinkedIn or GitHub.</p>
+
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/abraham-olasode-39a60753/" target="_blank" rel="noopener" class="contact-link">
+            <div class="contact-icon" style="background:rgba(10,102,194,0.1)">
+              <svg width="22" height="22" fill="#0A66C2" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <div class="contact-link-text">
+              <strong>LinkedIn</strong>
+              <span>Abraham Olasode</span>
+            </div>
+          </a>
+
+          <a href="https://github.com/abraolas/OlasodeAbraham" target="_blank" rel="noopener" class="contact-link">
+            <div class="contact-icon" style="background:rgba(36,41,47,0.08)">
+              <svg width="22" height="22" fill="#24292F" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            </div>
+            <div class="contact-link-text">
+              <strong>GitHub</strong>
+              <span>abraolas / OlasodeAbraham</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="contact-cta">
+          <h3>Currently pursuing<br/><em>MD-102</em></h3>
+          <p>I am actively building hands-on Intune and Microsoft 365 skills and working towards the MD-102 Endpoint Administrator certification. My lab work reflects real enterprise scenarios in Windows, iOS, and Android device management.</p>
+          <a href="#labs" class="btn btn-primary" style="width:100%;justify-content:center">
+            See My Lab Work
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Abraham Olasode</div>
+  <div class="footer-copy">© 2026 — ICT Service Administrator</div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Stagger children in grid reveals
+  document.querySelectorAll('.certs-grid.reveal, .labs-grid.reveal, .skills-grid').forEach(grid => {
+    const children = grid.children;
+    Array.from(children).forEach((child, i) => {
+      child.style.transitionDelay = `${i * 0.06}s`;
+    });
+  });
+</script>
 </body>
 </html>
